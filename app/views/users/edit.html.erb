@@ -1,0 +1,14 @@
+<h1> this the edit view </h1>
+
+<%= @user.name %>
+<br>
+<%= @user.id %>
+
+<br>
+
+<form action="/users/<%=@user.id%>" method='post'>
+  <input type="hidden" name="_method" value="PATCH">
+  <!-- input elements -->
+  <input type="text" name="user[name]">
+  <input type="submit" value="edit username">
+</form>

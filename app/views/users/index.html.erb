@@ -12,6 +12,14 @@
   <% @users.each do |user| %>
     <%= user.name %>
     <br>
+    <a href='/users/<%=user.id%>'> Link to show action </a>
+    <br>
+    <a href='/users/<%=user.id%>/edit'> Link to edit action </a>
+    <br>
+    <%= link_to 'Destroy', user_path(user.id),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <br>
   <% end %>
   <! list the users' name as a link to their edit page,
   also list their RSVP data

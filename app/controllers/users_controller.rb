@@ -22,18 +22,30 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
-"""  def show
+  def show
+    #Not really using this action...
     @users = User.all
-    @selected_user = User.find(params[:id])
+    @user = User.find(params[:id])
     render 'show'
-  end"""
+  end
 
   def update
+    @user = User.find(params[:id])
+    if @user
+      @user.name = user_params[:name]
+      @user.save
+    end
+    redirect_to users_url
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    #flash @user.name
+    redirect_to users_url
   end
 
   private
