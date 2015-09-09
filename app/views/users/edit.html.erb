@@ -1,14 +1,41 @@
-<h1> this the edit view </h1>
+<h1> Reed College Basketball </h1>
 
-<%= @user.name %>
-<br>
-<%= @user.id %>
+<p class = 'container'> Hi <%= @user.name %>! Please RSVP for the next game (on <%=@next_game%>, day of week = <%= @next_game.wday %>).</p>
 
+User name is "<%= @user.name %>"
 <br>
+User id = <%= @user.id %>
+<br>
+Current status is '<%= @user.status %>'
+<br>
+Next game is on <%= @next_game %>, day of week = <%= @next_game.wday %>
+<br>
+Following game is on <%= @next_next_game %>, day of week = <%= @next_next_game.wday %>
+<br>
+<h2> Are you attending next_game? </h2>
 
 <form action="/users/<%=@user.id%>" method='post'>
   <input type="hidden" name="_method" value="PATCH">
   <!-- input elements -->
+  <input type="radio" name="user[status]" id="rsvp_status_yes" value=:Going>
+  <label for="rsvp_status_yes">Yes</label>
+  <br>
+  <input type="radio" name="user[status]" id="rsvp_status_no" value=:NotGoing>
+  <label for="rsvp_status_no">No</label>
+  <br>
+  <input type="radio" name="user[status]" id="rsvp_status_maybe" value=:MightGo>
+  <label for="rsvp_status_maybe">Maybe?</label>
+  <br>
+  <input type="radio" name="user[status]" id="rsvp_status_default" value=:NoResponse>
+  <label for="rsvp_status_yes">Revert to default (make this the default value???)</label>
+  <br>
+  <br>
+   <input type="submit" value="Change status">
+</form>
+
+<form action="/users/<%=@user.id%>" method='post'>
+  <input type="hidden" name="_method" value="PATCH">
+
   <input type="text" name="user[name]">
   <input type="submit" value="edit username">
 </form>

@@ -1,24 +1,31 @@
-<h1> the index page (index.html.erb)</h1>
+<h1>Reed College Basketball</h1>
 
 <!link_to(body, url, html_options = {})>
 
 <!<a href="new_user_url"><!Create a new user</a>
+
+<p> Thank you for RSVPing before coming! Please click on a username to edit your status, or click <a href='/users/new'>here</a> to create a new user.</p>
+<br>
+
+
+<h4> The next game is on <%= @next_game %> (day of week = <%= @next_game.wday%>).</h4>
+<br>
+<h4> The following game is on <%= @next_next_game %> (day of week = <%= @next_next_game.wday %>).</h4>
+<br>
+<br>
 <a href='/users/new'>Create a new user!</a>
-
 <br>
 <br>
-
 <% if @users %>
   <% @users.each do |user| %>
-    <%= user.name %>
     <br>
-    <a href='/users/<%=user.id%>'> Link to show action </a>
+    <a href='/users/<%=user.id%>/edit'>Edit '<%=user.name%>'</a>
+    <!change 'Edit' link to ERB>
     <br>
-    <a href='/users/<%=user.id%>/edit'> Link to edit action </a>
+    Status is '<%= user.status %>'
     <br>
-    <%= link_to 'Destroy', user_path(user.id),
+    <%= link_to "Delete #{user.name}", user_path(user.id), class: 'btn',
                     method: :delete, data: { confirm: 'Are you sure?' } %>
-    <br>
     <br>
   <% end %>
   <! list the users' name as a link to their edit page,

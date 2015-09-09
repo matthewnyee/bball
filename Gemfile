@@ -55,7 +55,7 @@ group :development, :test do
 
   #MATT YEE DID THIS:
   #http://stackoverflow.com/questions/7963561/heroku-cannot-run-git-push-heroku-master
-  #gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do

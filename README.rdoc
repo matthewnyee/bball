@@ -26,3 +26,31 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+RSVP data as part of user resource
+-must reset for users who haven’t updated, otherwise old data will still show
+-reset all user data during gametime???
+-@user.next, @user.next_next
+
+
+RSVP data as new resource
+-no need for new pages
+
+
+
+
+1. add migration adding 'status' column
+  (later, add validations for Going/NotGoing/MightGo/NoResponse)
+2. add select (or whatever it's called) to edit view, then modify update method in controller
+3. modify index view to show
+4. activejobs/crono stuff
+
+User.update_all(status: 'NoResponse')
+
+
+add back link to edit page
+
+add radio buttons to "new user" page
+
+take out (refactor) radio buttons into _form (DRY code)
