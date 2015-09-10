@@ -1,0 +1,22 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 30px;
+}
+
+.container {
+  text-align: left;
+}
+
+.container h1 {
+  margin-bottom: 100px;
+}
+/*combine both containers in Hartl Ch 5 (nesting)*/
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
