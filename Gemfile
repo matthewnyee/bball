@@ -8,7 +8,7 @@ gem 'rails', '4.2.1'
 # MATT YEE COMMENTED sqlite3 OUT
 #gem 'sqlite3'
 # MATT YEE COMMENTED sqlite3 OUT
-
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem 'crono'
+gem 'haml'                    # for crono, see github
+gem 'sinatra', require: nil   # for crono, see github
 gem 'whenever', :require => false
 gem 'backburner'
 gem 'bootstrap-sass',       '3.2.0.0'
@@ -55,10 +57,10 @@ group :development, :test do
 
   #MATT YEE DID THIS:
   #http://stackoverflow.com/questions/7963561/heroku-cannot-run-git-push-heroku-master
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
+  #gem 'pg'#,             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end

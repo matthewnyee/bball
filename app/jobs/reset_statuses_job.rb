@@ -6,5 +6,5 @@ class ResetStatusesJob < ActiveJob::Base
     #User.save
   end
 
-  ResetStatusesJob.perform_later
+  #ResetStatusesJob.perform_later
 end
