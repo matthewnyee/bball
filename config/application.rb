@@ -25,7 +25,7 @@ module Bball
 
     #MATT YEE following Rails Active Jobs guide
     #MATT YEE
-    #config.active_job.queue_adapter = :backburner
+    config.active_job.queue_adapter = :backburner
     #MATT YEE
   end
 end

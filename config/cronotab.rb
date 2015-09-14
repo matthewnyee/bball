@@ -28,4 +28,4 @@
 #     end
 # end
 
-#Crono.perform(ResetStatusesJob).every 2.seconds
+Crono.perform(ResetStatusesJob).every 2.seconds

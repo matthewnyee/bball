@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Crono::Web, at: '/crono' #from crono gihub
+  mount Crono::Web, at: '/crono' #see crono readme on gihub
 
   resources :users
 

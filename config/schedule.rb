@@ -24,9 +24,9 @@
 
 
 #NEXT 3 lines commented out SEp 11
-# every 1.minute do
-#   runner "User.update_all(status => :schedule_rb_file_withwheneverize)"
-# end
+ every 1.minute do
+   runner "User.update_all(status => :schedule_rb_file_withwheneverize)"
+ end
 ###########################################################################
 
 # job_type :awesome, '/usr/local/bin/awesome :task :fun_level'

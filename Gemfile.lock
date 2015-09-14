@@ -173,6 +173,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   backburner
+  beaneater
   bootstrap-sass (= 3.2.0.0)
   byebug
   coffee-rails (~> 4.1.0)
